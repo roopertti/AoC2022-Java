@@ -3,10 +3,10 @@ package aoc2022.java19.puzzles;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 
 public class Puzzle2 extends Puzzle {
   private static final Map<Character, Integer> selectionScores = Map.of('Z', 3, 'Y', 2, 'X', 1);
+  
   private static final Map<String, Integer> matchScoresPart1 = Map.of(
       "A X", 3,
       "A Y", 6,
