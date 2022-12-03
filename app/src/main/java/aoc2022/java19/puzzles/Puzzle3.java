@@ -44,33 +44,33 @@ public class Puzzle3 extends Puzzle {
     String firstCompartment = content.substring(0, divider);
     String secondCompartment = content.substring(divider);
 
-    return getIntersections(List.of(firstCompartment, secondCompartment), Set.of()).get(0);
+    return getOverlaps(List.of(firstCompartment, secondCompartment), Set.of()).get(0);
   }
 
   private static Integer getOverlappingItemFromGroup(List<String> groupContents) {
-    return getIntersections(groupContents, Set.of()).get(0);
+    return getOverlaps(groupContents, Set.of()).get(0);
   }
 
   /**
-   * Get intersecting char values from given list of strings. Also accepts a list
-   * of intersections (used in recursion)
+   * Get overlapping char values from given list of strings. Also accepts a list
+   * of initial overlaps (used in recursion)
    */
-  private static List<Integer> getIntersections(List<String> contents, Set<Integer> intersections) {
+  private static List<Integer> getOverlaps(List<String> contents, Set<Integer> initialOverlaps) {
     if (contents.size() <= 1)
-      return intersections.stream().toList();
+      return initialOverlaps.stream().toList();
 
     var currentItems = contents.get(0).chars().boxed().collect(Collectors.toSet());
 
     /*
-     * Check overlaps by comparing to next contents and intersections (if
-     * intersections have any values)
+     * Check overlaps by comparing to next contents and initial overlaps (if
+     * initialOverlaps has values)
      */
     var overlaps = contents.get(1).chars().boxed()
-        .filter(item -> intersections.isEmpty() || intersections.contains(item))
+        .filter(item -> initialOverlaps.isEmpty() || initialOverlaps.contains(item))
         .filter(item -> currentItems.contains(item))
         .collect(Collectors.toSet());
 
-    return getIntersections(contents.subList(1, contents.size()), overlaps);
+    return getOverlaps(contents.subList(1, contents.size()), overlaps);
   }
 
   /**
