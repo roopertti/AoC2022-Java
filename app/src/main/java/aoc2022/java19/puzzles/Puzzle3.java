@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import com.google.common.collect.Lists;
 
 public class Puzzle3 extends Puzzle {
-  List<String> contents;
+  private List<String> contents;
 
   public Puzzle3(String input) {
     super(input);
@@ -52,7 +52,8 @@ public class Puzzle3 extends Puzzle {
   }
 
   /**
-   * Get intersecting char values from given list of strings. Also accepts a list of intersections (used in recursion)
+   * Get intersecting char values from given list of strings. Also accepts a list
+   * of intersections (used in recursion)
    */
   private static List<Integer> getIntersections(List<String> contents, Set<Integer> intersections) {
     if (contents.size() <= 1)
@@ -60,20 +61,21 @@ public class Puzzle3 extends Puzzle {
 
     var currentItems = contents.get(0).chars().boxed().collect(Collectors.toSet());
 
-    /* Check overlaps by comparing to next contents and intersections (if intersections have any values) */
+    /*
+     * Check overlaps by comparing to next contents and intersections (if
+     * intersections have any values)
+     */
     var overlaps = contents.get(1).chars().boxed()
         .filter(item -> intersections.isEmpty() || intersections.contains(item))
         .filter(item -> currentItems.contains(item))
         .collect(Collectors.toSet());
-    
-    if (contents.size() == 2)
-      return overlaps.stream().toList();
 
     return getIntersections(contents.subList(1, contents.size()), overlaps);
   }
 
   /**
-   * Determine item priority by checking ASCII table position and offsetting by puzzle scores
+   * Determine item priority by checking ASCII table position and offsetting by
+   * puzzle scores
    */
   private static Integer getItemPriority(Integer item) {
     if (item >= 96 && item <= 122)

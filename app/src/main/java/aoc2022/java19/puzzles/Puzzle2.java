@@ -29,6 +29,7 @@ public class Puzzle2 extends Puzzle {
     "C Y", 'Z',
     "C Z", 'X'
   );
+  
   private static final Map<Character, Integer> matchScoresPart2 = Map.of(
     'X', 0,
     'Y', 3,
