@@ -5,10 +5,10 @@ package aoc2022.java19;
 
 import java.util.List;
 
-import aoc2022.java19.puzzles.Example;
 import aoc2022.java19.puzzles.Puzzle;
 import aoc2022.java19.puzzles.Puzzle1;
 import aoc2022.java19.puzzles.Puzzle2;
+import aoc2022.java19.puzzles.Puzzle3;
 
 public class App {
     /* Very cool banner */
@@ -38,7 +38,8 @@ public class App {
             /* List puzzles here with dedicated inputs */
             List<Puzzle> puzzles = List.of(
                 new Puzzle1(InputReader.read("1.txt")),
-                new Puzzle2(InputReader.read("2.txt"))
+                new Puzzle2(InputReader.read("2.txt")),
+                new Puzzle3(InputReader.read("3.txt"))
             );
 
             /* Produce outputs for each puzzle */
