@@ -49,15 +49,11 @@ public class Puzzle8 extends Puzzle {
 
   private int[][] createTreeMatrix(String[] lines) {
     int[][] treeMatrix = new int[forestHeight][forestWidth];
-    int x = 0;
-    int y = 0;
-    for (String row : lines) {
-      for (int tree : row.chars().toArray()) {
-        treeMatrix[y][x] = Character.getNumericValue(tree);
-        x++;
+
+    for (int y = 0; y < lines.length; y++) {
+      for (int x = 0; x < lines[y].length(); x++) {
+        treeMatrix[y][x] = Character.getNumericValue(lines[y].charAt(x));
       }
-      y++;
-      x = 0;
     }
 
     return treeMatrix;
@@ -65,15 +61,11 @@ public class Puzzle8 extends Puzzle {
 
   private List<TreeVisibilityDetails> createTreeDetails() {
     List<TreeVisibilityDetails> details = new ArrayList<>();
-    int x = 0;
-    int y = 0;
-    while (y < forestHeight) {
-      while (x < forestWidth) {
+
+    for (int y = 0; y < forestHeight; y++) {
+      for (int x = 0; x < forestWidth; x++) {
         details.add(calculateTreeVisibilityDetailsForPoint(x, y));
-        x++;
       }
-      y++;
-      x = 0;
     }
 
     return details;
