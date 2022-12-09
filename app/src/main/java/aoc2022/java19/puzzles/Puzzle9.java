@@ -113,6 +113,7 @@ public class Puzzle9 extends Puzzle {
         continue;
       }
 
+      // We'll end up here if target is not reached, so update positions
       nodes = updateNodes(nodes, target);
     }
 
