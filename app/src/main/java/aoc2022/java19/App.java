@@ -14,6 +14,7 @@ import aoc2022.java19.puzzles.Puzzle5;
 import aoc2022.java19.puzzles.Puzzle6;
 import aoc2022.java19.puzzles.Puzzle7;
 import aoc2022.java19.puzzles.Puzzle8;
+import aoc2022.java19.puzzles.Puzzle9;
 
 public class App {
     /* Very cool banner */
@@ -49,7 +50,8 @@ public class App {
                 new Puzzle5(InputReader.read("5.txt")),
                 new Puzzle6(InputReader.read("6.txt")),
                 new Puzzle7(InputReader.read("7.txt")),
-                new Puzzle8(InputReader.read("8.txt"))
+                new Puzzle8(InputReader.read("8.txt")),
+                new Puzzle9(InputReader.read("9.txt"))
             );
 
             /* Produce outputs for each puzzle */
