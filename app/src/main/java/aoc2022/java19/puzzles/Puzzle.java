@@ -44,10 +44,10 @@ public abstract class Puzzle {
          ~ DAY %s OUTPUT ~
 
         Part 1:
-        > %s
+        %s
 
         Part 2:
-        > %s
+        %s
 
         """.formatted(getDay(), getPart1Output(), getPart2Output());
   }
