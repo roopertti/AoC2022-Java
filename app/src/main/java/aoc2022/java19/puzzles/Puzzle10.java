@@ -30,7 +30,7 @@ public class Puzzle10 extends Puzzle {
     return renderScreenAsString();
   }
 
-  private int runInstructions(List<String> instructions) {
+  private void runInstructions(List<String> instructions) {
     LinkedList<String> remainingInstructions = new LinkedList<>(instructions);
     int amountOfCyclesRan = 0;
     String pendingInstruction = null;
@@ -71,8 +71,6 @@ public class Puzzle10 extends Puzzle {
         pendingInstruction = nextInstruction;
       }
     }
-
-    return signalStrenghtSum;
   }
 
   private String renderScreenAsString() {
