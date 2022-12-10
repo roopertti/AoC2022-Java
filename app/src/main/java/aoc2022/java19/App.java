@@ -7,6 +7,7 @@ import java.util.List;
 
 import aoc2022.java19.puzzles.Puzzle;
 import aoc2022.java19.puzzles.Puzzle1;
+import aoc2022.java19.puzzles.Puzzle10;
 import aoc2022.java19.puzzles.Puzzle2;
 import aoc2022.java19.puzzles.Puzzle3;
 import aoc2022.java19.puzzles.Puzzle4;
@@ -51,11 +52,12 @@ public class App {
                 new Puzzle6(InputReader.read("6.txt")),
                 new Puzzle7(InputReader.read("7.txt")),
                 new Puzzle8(InputReader.read("8.txt")),
-                new Puzzle9(InputReader.read("9.txt"))
+                new Puzzle9(InputReader.read("9.txt")),
+                new Puzzle10(InputReader.read("10.txt"))
             );
 
             /* Produce outputs for each puzzle */
-            puzzles.stream().map(Puzzle::produceOutputs).forEach(System.out::println);
+            puzzles.stream().map(Puzzle::produceOutputs).forEach(System.out::print);
         } catch (Exception e) {
             e.printStackTrace();
         }
