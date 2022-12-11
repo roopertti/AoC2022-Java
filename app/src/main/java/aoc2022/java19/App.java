@@ -8,6 +8,7 @@ import java.util.List;
 import aoc2022.java19.puzzles.Puzzle;
 import aoc2022.java19.puzzles.Puzzle1;
 import aoc2022.java19.puzzles.Puzzle10;
+import aoc2022.java19.puzzles.Puzzle11;
 import aoc2022.java19.puzzles.Puzzle2;
 import aoc2022.java19.puzzles.Puzzle3;
 import aoc2022.java19.puzzles.Puzzle4;
@@ -53,7 +54,8 @@ public class App {
                 new Puzzle7(InputReader.read("7.txt")),
                 new Puzzle8(InputReader.read("8.txt")),
                 new Puzzle9(InputReader.read("9.txt")),
-                new Puzzle10(InputReader.read("10.txt"))
+                new Puzzle10(InputReader.read("10.txt")),
+                new Puzzle11(InputReader.read("11.txt"))
             );
 
             /* Produce outputs for each puzzle */
